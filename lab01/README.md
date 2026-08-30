@@ -10,25 +10,97 @@
 
 Indice:
 
-1. [Documentación](#documentación-de-los-circuitos-implementados-implementado)
-2. [Simulaciones](#simulaciones)
-3. [Evidencias de implementación](#evidencias-de-implementación)
-4. [Conclusiones](#conclusiones)
-5. [Referencias](#referencias)
+1. [Documentación]
+2. [Simulaciones]
+3. [Evidencias]
+4. [Conclusiones]
+5. [Referencias]
 
 ## Documentación del diseño implementado
 
-### 1. Compuertas
+### 1. Compuertas Lógicas:
 
-#### 1.1 Descripción 
+#### 1.1 Descripción:
+Esta parte pretende recopilar el funcionamiento y explicación gráfica de 5 compuertas lógicas las cuales se detallaran a continuación: 
+
+- Compuerta OR: 
+La compuerta OR normalmente tiene dos entradas: A y B, y una salida Y.
+
+TABLA DE VERDAD: 
+![Imagen 1](/lab01/img/OR%20TV.webp)
+
+Su expresión lógica es:
+
+Y = A|B (En codigo)
+
+- Compuerta AND: 
+En esta compuerta las dos entradas deben estar con 1 logico para que me de señal de salida en su terminal Y 
+
+TABLA DE VERDAD: 
+![Imagen 2](/lab01/img/AND%20TV.jpg)
+
+Expresion logica en codigo: 
+Y= A&B
+- Compuerta  NOT:
+La compuerta NOT es una compuerta lógica que tiene una entrada (A) y una salida (Y). Su función es invertir el valor de la entrada.
+
+TABLA DE VERDAD: 
+![Imagen 3](/lab01/img/NOT.jpg)
+
+Expresion logica en Codigo: 
+Y= Y=A⊕B​ 
+Y= ~(A ^ B)
+
+- Compuerta XOR: 
+La compuerta XOR (Exclusive OR u OR exclusiva) tiene normalmente dos entradas, A y B, y una salida Y.
+
+Su función es producir 1 cuando las entradas son diferentes.
+
+TABLA DE VERDAD: 
+![Imagen 4](/lab01/img/XOR%20TV.jpg)
+
+Expresión lógica
+Y=A⊕B
+
+
+- Compuerta XNOR:
+La compuerta XNOR (Exclusive NOR u OR exclusiva negada) es una compuerta lógica que tiene normalmente dos entradas (A y B) y una salida Y.
+
+Su función es entregar 1 cuando las entradas son iguales.
+
+Expresión lógica
+Y=
+A⊕B En logica Booleana
+Y = ~(A ^ B) En codigo verilog.
+
 
 #### 1.2 Diagramas
-En la siguiente imagen se observa una muestra de diagrama de transmisión de datos mediante protocolo UART
-![Diagrama 1](/lab01/img/Selection_090.png)
+En las siguientes imagenes se detallara las compuertas en el diagrama VERILOG simulado mediante codigo hecho en Visual Code Studio  
+
+COMPUERTA OR:
+![Diagrama 1](/lab01/img/OR%20VERILOG.png)
+
+COMPUERTA AND:
+![Diagrama 2](/lab01/img/AND%20VERILOG%20.png)
+
+COMPUERTA NOR
+![Diagrama 2](/lab01/img/NOR%20VERILOG%20.png)
+
+COMPUERTA XOR: 
+[Diagrama 3](/lab01/img/XOR%20VERILOG%20.png)
+
+COMPUERTA XNOR: 
+[Diagrama 4](/lab01/img/XNOR%20VERILOG%20.png)
+
+
+
+
+
 
 ### 2. Verificador de Números Primos
 
 #### 2.1 Descripción 
+En este 
 
 #### 2.2 Diagramas
 
