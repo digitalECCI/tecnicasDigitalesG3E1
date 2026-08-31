@@ -123,15 +123,34 @@ Entradas: A y B (los dos bits a sumar), y Cin (el acarreo de entrada proveniente
 ## Simulaciones 
 
 ### 1. Simulación de compuertas
+## OR
+![IMAGEN 9](/img/OR%20VERILOG.png)
+
+## AND
+![IMAGEN 9](/img/AND%20VERILOG%20.png)
+
+## NOT
+![IMAGEN 9](/img/NOR%20VERILOG%20.png)
+
+## XOR
+![IMAGEN 9](/img/XOR%20VERILOG%20.png)
+
+## XNOR
+![IMAGEN 9](/img/XNOR%20VERILOG%20.png)
 
 ### 2. Simulacion Verificador Numeros Primos
-### 3. Simulación de Sumador de 1 Bit
+![IMAGEN 9](/DETECTOR%20PRIMOS%20.png)
 
+### 3. Simulación de Sumador de 1 Bit
+![IMAGEN 9](/img/SUMADOR.png)
 
 ## Evidencias de implementación
 
 ### 1. Compuertas
+LINK DEL VIDEO: [VIDEO COMPUERTAS](https://youtu.be/w6aTGyuoSmg)
+
 ### 2. Verificador de Números Primos 
+LINK DEL VIDEO: [VIDEO DETECTOR PRIMOS](https://www.youtube.com/watch?v=8zMkII2FFtE)
 ### 3. Sumador de 1 Bit
 
 ## Conclusiones
