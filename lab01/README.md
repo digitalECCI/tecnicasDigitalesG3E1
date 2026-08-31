@@ -26,7 +26,7 @@ Esta parte pretende recopilar el funcionamiento y explicación gráfica de 5 com
 La compuerta OR normalmente tiene dos entradas: A y B, y una salida Y.
 
 TABLA DE VERDAD: 
-![Imagen 1](/img/OR%20TV.webp)
+![Imagen 1](img/OR%20TV.webp)
 
 Su expresión lógica es:
 
@@ -36,7 +36,7 @@ Y = A|B (En codigo)
 En esta compuerta las dos entradas deben estar con 1 logico para que me de señal de salida en su terminal Y 
 
 TABLA DE VERDAD: 
-![Imagen 2](/img/AND%20TV.jpg)
+![Imagen 2](img/AND%20TV.jpg)
 
 Expresion logica en codigo: 
 Y= A&B
@@ -44,7 +44,7 @@ Y= A&B
 La compuerta NOT es una compuerta lógica que tiene una entrada (A) y una salida (Y). Su función es invertir el valor de la entrada.
 
 TABLA DE VERDAD: 
-![Imagen 3](/img/NOT.jpg)
+![Imagen 3](img/NOT.jpg)
 
 Expresion logica en Codigo: 
 Y= Y=A⊕B​ 
@@ -56,7 +56,7 @@ La compuerta XOR (Exclusive OR u OR exclusiva) tiene normalmente dos entradas, A
 Su función es producir 1 cuando las entradas son diferentes.
 
 TABLA DE VERDAD: 
-![Imagen 4](/img/XOR%20TV.jpg)
+![Imagen 4](img/XOR%20TV.jpg)
 
 Expresión lógica
 Y=A⊕B
@@ -73,7 +73,7 @@ A⊕B En logica Booleana
 Y = ~(A ^ B) En codigo verilog.
 
 TABLA DE VERDAD: 
-![IMAGEN 5](/img/XNORTV.gif)
+![IMAGEN 5](img/XNORTV.gif)
 
 
 
@@ -81,19 +81,19 @@ TABLA DE VERDAD:
 En las siguientes imagenes se detallara las compuertas en el diagrama VERILOG simulado mediante codigo hecho en Visual Code Studio  
 
 COMPUERTA OR:
-![Diagrama 1](/img/OR%20VERILOG.png)
+![Diagrama 1](img/OR%20VERILOG.png)
 
 COMPUERTA AND:
-![Diagrama 2](/img/AND%20VERILOG%20.png)
+![Diagrama 2](img/AND%20VERILOG%20.png)
 
 COMPUERTA NOR
-![Diagrama 2](/img/NOR%20VERILOG%20.png)
+![Diagrama 2](img/NOR%20VERILOG%20.png)
 
 COMPUERTA XOR: 
-[Diagrama 3](/img/XOR%20VERILOG%20.png)
+[Diagrama 3](img/XOR%20VERILOG%20.png)
 
 COMPUERTA XNOR: 
-[Diagrama 4](/img/XNOR%20VERILOG%20.png)
+[Diagrama 4](img/XNOR%20VERILOG%20.png)
 
 ### 2. Verificador de Números Primos
 
@@ -101,12 +101,12 @@ COMPUERTA XNOR:
 En este item se describira el funcionamiento de un detector de numeros primos en el cual de tienen tres entradas A, B, y C, con las cuales detectaremos a traves de nuestra salida S se mostrara el cuadro verilog en el cual verificamos si es primo o no el numero en cuestión
 
 #### 2.2 Diagramas
-![IMAGEN 6](/DETECTOR%20PRIMOS%20.png)
+![IMAGEN 6](DETECTOR%20PRIMOS%20.png)
 
 Como se puede observar en el diagrama se muestra numeros del 0 al 7 y su comportamiento logico respecto a si es o no un numero primo detectando un 1 lógico si es primo y un 0 lógico si no lo es. 
 
 TABLA DE VERDAD: 
-![IMAGEN 7](/img/TVNP.png)
+![IMAGEN 7](img/TVNP.png)
 
 ### 3. Sumador de 1 Bit
 
@@ -117,32 +117,32 @@ Entradas: A y B (los dos bits a sumar), y Cin (el acarreo de entrada proveniente
 
 #### 3.2 Diagramas
  SIMULACION EN VERILOG DEL SUMADOR: 
- ![IMAGEN 8](/img/SUMADOR.png)
+ ![IMAGEN 8](img/SUMADOR.png)
 
 
 ## Simulaciones 
 
 ### 1. Simulación de compuertas
 ## OR
-![IMAGEN 9](/img/OR%20VERILOG.png)
+![IMAGEN 9](img/OR%20VERILOG.png)
 
 ## AND
-![IMAGEN 9](/img/AND%20VERILOG%20.png)
+![IMAGEN 9](img/AND%20VERILOG%20.png)
 
 ## NOT
-![IMAGEN 9](/img/NOR%20VERILOG%20.png)
+![IMAGEN 9](img/NOR%20VERILOG%20.png)
 
 ## XOR
-![IMAGEN 9](/img/XOR%20VERILOG%20.png)
+![IMAGEN 9](img/XOR%20VERILOG%20.png)
 
 ## XNOR
-![IMAGEN 9](/img/XNOR%20VERILOG%20.png)
+![IMAGEN 9](img/XNOR%20VERILOG%20.png)
 
 ### 2. Simulacion Verificador Numeros Primos
-![IMAGEN 9](/DETECTOR%20PRIMOS%20.png)
+![IMAGEN 9](DETECTOR%20PRIMOS%20.png)
 
 ### 3. Simulación de Sumador de 1 Bit
-![IMAGEN 9](/img/SUMADOR.png)
+![IMAGEN 9](img/SUMADOR.png)
 
 ## Evidencias de implementación
 
