@@ -116,6 +116,8 @@ En este ultimo Ítem mostraremos el funcionamiento de un sumador de 1 Bit con ac
 Entradas: A y B (los dos bits a sumar), y Cin (el acarreo de entrada proveniente de una suma anterior).Salidas: S (la suma resultante) y Cout (el acarreo de salida).
 
 #### 3.2 Diagramas
+ SIMULACION EN VERILOG DEL SUMADOR: 
+ ![IMAGEN 8](/img/SUMADOR.png)
 
 
 ## Simulaciones 
