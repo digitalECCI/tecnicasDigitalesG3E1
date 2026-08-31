@@ -106,11 +106,14 @@ En este item se describira el funcionamiento de un detector de numeros primos en
 Como se puede observar en el diagrama se muestra numeros del 0 al 7 y su comportamiento logico respecto a si es o no un numero primo detectando un 1 lógico si es primo y un 0 lógico si no lo es. 
 
 TABLA DE VERDAD: 
-![IMAGEN 7](/)
+![IMAGEN 7](/img/TVNP.png)
+
 ### 3. Sumador de 1 Bit
 
-
 #### 3.1 Descripción 
+
+En este ultimo Ítem mostraremos el funcionamiento de un sumador de 1 Bit con acarreo incluido. Un sumador de un bit con acarreo (también llamado sumador completo o full adder) es un circuito lógico que suma dos bits de entrada más un acarreo de entrada, generando un bit de suma y un acarreo de salida
+Entradas: A y B (los dos bits a sumar), y Cin (el acarreo de entrada proveniente de una suma anterior).Salidas: S (la suma resultante) y Cout (el acarreo de salida).
 
 #### 3.2 Diagramas
 
