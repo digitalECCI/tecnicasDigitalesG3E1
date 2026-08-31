@@ -156,6 +156,9 @@ LINK DEL VIDEO: [VIDEO DETECTOR PRIMOS](https://www.youtube.com/watch?v=8zMkII2F
 LINK DEL VIDEO: [VIDEO SUMADOR 1 BIT](https://www.youtube.com/watch?v=j9EFlaOhfn8)
 
 ## Conclusiones
-
-
+- Durante el desarrollo del laboratorio se logró comprender y comprobar el funcionamiento de las principales compuertas lógicas combinacionales, como OR, AND, NOT, XOR y XNOR. A través de sus tablas de verdad y simulaciones en Verilog fue posible verificar el comportamiento de cada una de acuerdo con su expresión lógica.
+- La implementación de los circuitos mediante Verilog permitió relacionar los conceptos teóricos de lógica booleana con su aplicación práctica en el diseño digital. Las simulaciones facilitaron la identificación de las diferentes combinaciones de entradas y permitieron comprobar las salidas obtenidas en cada circuito.
+- El desarrollo del verificador de números primos permitió aplicar las compuertas lógicas para construir un circuito capaz de identificar, mediante tres entradas binarias, cuáles números entre 0 y 7 corresponden a números primos. Esto permitió comprender cómo pueden utilizarse circuitos combinacionales para realizar procesos de decisión.
+- La implementación del sumador completo de 1 bit permitió comprender el funcionamiento de un circuito capaz de sumar dos bits considerando también un acarreo de entrada. Se comprobó la generación de la salida de suma y del acarreo de salida, elementos fundamentales para la construcción de circuitos aritméticos de mayor capacidad.
+- Finalmente, el laboratorio permitió fortalecer las habilidades en el uso de Verilog y en la simulación de circuitos digitales, demostrando la importancia de combinar los fundamentos de lógica digital con herramientas de programación y simulación para diseñar, comprobar y analizar sistemas digitales.
 ## Referencias
