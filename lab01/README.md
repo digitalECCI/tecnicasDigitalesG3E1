@@ -102,7 +102,7 @@ En este item se describira el funcionamiento de un detector de numeros primos en
 
 #### 2.2 Diagramas
 
-![IMAGEN 6](/img/DETECTOR%20PRIMOS%20.png)
+![IMAGEN 6](img/DETECTOR%20PRIMOS%20.png)
 
 
 Como se puede observar en el diagrama se muestra numeros del 0 al 7 y su comportamiento logico respecto a si es o no un numero primo detectando un 1 lógico si es primo y un 0 lógico si no lo es. 
