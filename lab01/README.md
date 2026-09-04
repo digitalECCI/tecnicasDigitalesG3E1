@@ -157,6 +157,257 @@ LINK DEL VIDEO: [VIDEO DETECTOR PRIMOS](https://www.youtube.com/watch?v=8zMkII2F
 ### 3. Sumador de 1 Bit
 LINK DEL VIDEO: [VIDEO SUMADOR 1 BIT](https://www.youtube.com/watch?v=j9EFlaOhfn8)
 
+## CODIGOS EN VISUAL: 
+COMPUERTA OR: Archivo .v
+module OR (
+    input wire  E1, // ENTRADA 1 
+    input wire  E2, // ENTRADA 2
+    output wire  S // SALIDA COMPUERTA
+);
+assign S= E1||E2;
+endmodule
+
+Archivo TB.v
+`include "OR.V"
+`timescale 1ps/1ps
+
+module ORTB (
+);
+reg E1_TB;
+reg E2_TB;
+wire S_TB;
+
+OR uut
+(
+    .E1(E1_TB),
+    .E2(E1_TB),
+    .S(S_TB)
+);
+    initial begin
+      // CASO 1
+
+      E1_TB = 1'b0;
+      E2_TB = 1'b0;
+      #5;
+
+      // CASO 2
+      E1_TB = 1'b0;
+      E2_TB = 1'b1;
+      #5;
+
+        // CASO 3
+      E1_TB = 1'b1;
+      E2_TB = 1'b0;
+      #5;
+
+      // CASO 4 
+      E1_TB = 1'b1;
+      E2_TB = 1'b1;
+      #5;
+    end
+    
+    initial begin
+        $dumpfile("OR_TB.vcd");
+        $dumpvars(0, uut);
+        #20;
+        $finish;
+    end
+endmodule
+
+COMPUERTA AND:
+Archivo .v:
+module AND(
+    input wire A,
+    input wire B,
+    output wire Y
+);
+
+    assign Y = A & B;
+
+endmodule
+
+Archivo TB.v: 
+`include "AND.V"
+`timescale 1ns/1ps
+
+module AND_TB;
+
+    reg A;
+    reg B;
+    wire Y;
+
+    AND uut (
+        .A(A),
+        .B(B),
+        .Y(Y)
+    );
+
+    initial begin
+        $dumpfile("AND_TB.vcd");
+        $dumpvars(0, AND_TB);
+
+        $monitor("A = %b, B = %b, Y = %b", A, B, Y);
+
+        A = 0; B = 0;
+        #10 A = 0; B = 1;
+        #10 A = 1; B = 0;
+        #10 A = 1; B = 1;
+        #10 $finish;
+    end
+
+endmodule
+
+
+COMPUERTA NOT: 
+Archivo .v: 
+module NOT (
+    input  wire A,
+    output wire Y
+);
+
+    // Operador ~ realiza la inversión lógica (NOT)
+    assign Y = ~A;
+
+endmodule
+
+Archivo TB.v: 
+`timescale 1ns/1ps
+
+module NOT_TB;
+
+    reg A;
+    wire Y;
+
+    NOT uut (
+        .A(A),
+        .Y(Y)
+    );
+
+    initial begin
+        $dumpfile("NOT_TB.vcd");
+        $dumpvars(0, NOT_TB);
+
+        $monitor("A = %b, Y = %b", A, Y);
+
+        A = 0;
+        #10 A = 1;
+        #10 A = 0;
+        #10 $finish;
+    end
+
+endmodule
+
+COMPUERTA XNOR: 
+Archivo .v: 
+odule XNOR (
+    input wire E1,
+    input wire E2,
+    output wire S
+);
+    assign S=(E1&&E2)||(!E1&&!E2);
+
+endmodule
+
+Archivo TB.v: 
+`include "XNOR.V"
+`timescale 1ps/1ps 
+
+module XNOR_TB (
+);
+reg E1_TB;
+reg E2_TB;  
+wire S_TB;
+
+XNOR uut
+(
+    .E1(E1_TB),
+    .E2(E2_TB),
+    .S(S_TB)
+);
+    initial begin
+      // CASO 1
+
+      E1_TB = 1'b0;
+      E2_TB = 1'b0;
+      #5;
+
+      // CASO 2
+      E1_TB = 1'b0;
+      E2_TB = 1'b1;
+      #5;
+
+        // CASO 3
+      E1_TB = 1'b1;
+      E2_TB = 1'b0;
+      #5;
+
+      // CASO 4 
+      E1_TB = 1'b1;
+      E2_TB = 1'b1;
+      #5;
+    end
+    initial begin
+        $dumpfile("XNOR_TB.vcd");
+        $dumpvars(-1, uut);
+        #20;
+        $finish;
+    end    
+endmodule
+
+COMPUERTA XOR: 
+Archivo .v: 
+module XOR(
+    input wire A,
+    input wire B,
+    output wire Y
+);
+
+    assign Y = A ^ B;
+
+endmodule
+
+Archivo TB.v: 
+`include "XOR.v"
+`timescale 1ns/1ps
+
+module XOR_TB;
+
+    reg A;
+    reg B;
+    wire Y;
+
+    XOR uut (
+        .A(A),
+        .B(B),
+        .Y(Y)
+    );
+
+    initial begin
+
+        $dumpfile("XOR_TB.vcd");
+        $dumpvars(0, XOR_TB);
+
+        $monitor("Tiempo=%0t | A=%b B=%b | Y=%b",
+                 $time, A, B, Y);
+
+        A = 0; B = 0;
+        #10;
+
+        A = 0; B = 1;
+        #10;
+
+        A = 1; B = 0;
+        #10;
+
+        A = 1; B = 1;
+        #10;
+
+        $finish;
+    end
+
+endmodule
+
+
 ## Conclusiones
 
 - Durante el desarrollo del laboratorio se logró comprender y comprobar el funcionamiento de las principales compuertas lógicas combinacionales, como OR, AND, NOT, XOR y XNOR. A través de sus tablas de verdad y simulaciones en Verilog fue posible verificar el comportamiento de cada una de acuerdo con su expresión lógica.
