@@ -184,5 +184,67 @@ endmodule
 
 Como se puede analizar se enlazo el archivo del sumador de 1 Bit para asi poder crear a partir de este nuestro sumador de 4 Bits. 
 
+El codigo mostrasdo a continuacion nos muestra una instanciacion con el "for" para asi reducir las lineas de nuestro anterior codigo: 
+
+##### CODIGO CON FOR: 
+
+`include "sumador_bit.v"
+
+`timescale 1ns/1ps
+
+module SUMADOR4B_TB;
+
+    // Entradas del diseño (reg)
+    reg [3:0] A;
+    reg [3:0] B;
+    reg Cin;
+
+    // Salidas del diseño (wire)
+    wire [3:0] S;
+    wire Cout;
+
+    integer i,j;
+
+    // Instancia de la unidad bajo prueba (UUT)
+    sumador_bit uut (
+        .A(A),
+        .B(B),SUMADOR4B_TB.vcd
+        .Cin(Cin),
+        .S(S),
+        .Cout(Cout)
+    );
+
+    initial begin
+        // Crear el archivo de ondas para GTKWave
+        $dumpfile("");
+        $dumpvars(0, SUMADOR4B_TB);
+
+Cin=0;
+for(i=0; i<16; i=i+1) begin
+    for(j=0; j<16; j=j+1) begin
+        A = i; // Asignar valor a A
+        B = j; // Asignar valor a B
+        
+        #10; // Esperar 10 unidades de tiempo
+    end
+end
+        $display("Simulación terminada correctamente.");
+        $finish;
+    end
+
+endmodule
+
 
 #### SIMULACION EN VERILOG: 
+A continuacion veremos la simulacion de nuestro circuto con el FOR anidado en nuestro codigo: 
+
+![Imagen_2](/tecnicasDigitalesG3E1/lab02/img2/WhatsApp%20Image%202026-09-18%20at%2018.06.06.jpeg)
+
+Se observan las posibles combinaciones de nuestro codigo binario (256 combinaciones) de las cuales se muestran 15 sacadas mediante nuestro anidado "FOR". y las restantes 250 se muestran en nuestras entradas A y B. 
+
+#### EVIDENCIAS: 
+
+En el siguiente video (enlace de video), se observa el correcto funcionamiento de nuestro circuito SUMADOR DE 4 BITS: 
+
+##### LINK DEL VIDEO: 
+
