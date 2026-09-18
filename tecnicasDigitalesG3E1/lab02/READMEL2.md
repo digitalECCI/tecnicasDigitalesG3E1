@@ -1,4 +1,4 @@
-# Laboratorio 1: Introducción a la lógica combinacional
+# Laboratorio 2: Sumador de 4 Bits 
 
 ## Integrantes
 * [Wilmer Fernando Puentes Gomez](https://github.com/wilmerfepuentesgo-alt)
@@ -25,7 +25,7 @@ Para construir un sumador de 4 bits utilizando el sumador de 1 bit como módulo 
 
 Un sumador de 4 bits suma dos números de 4 bits ([3:0] A y [3:0] B) y produce una suma de 4 bits ([3:0] So) y un acarreo de salida (Co). Para lograr esto, se utilizan 4 sumadores de 1 bit, cada uno manejando una posición de la salida So (0 a 3) y el acarreo hacia la siguiente posición. A continuación se muestra su respectivo bloque funcional: 
 
-![Imagen 1](/tecnicasDigitalesG3E1/lab01/img/SUM4B%20BLOQUES.png)
+![Imagen 1](/tecnicasDigitalesG3E1/lab02/img2/SUM4B%20BLOQUES.png)
 
 La implementación del sumador de 4 bits utilizando instancias del sumador de 1 bit es un ejemplo de diseño estructural en HDL, en donde se utiliza el sumador de 1 bit para construir un sumador de 4 bits de manera modular.
 
@@ -183,3 +183,6 @@ SUMADOR BIT3
 endmodule
 
 Como se puede analizar se enlazo el archivo del sumador de 1 Bit para asi poder crear a partir de este nuestro sumador de 4 Bits. 
+
+
+#### SIMULACION EN VERILOG: 
