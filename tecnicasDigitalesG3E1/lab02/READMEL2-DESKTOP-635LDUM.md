@@ -250,4 +250,6 @@ En el siguiente video (enlace de video), se observa el correcto funcionamiento d
 ![Video](/tecnicasDigitalesG3E1/lab01/img/WhatsApp%20Video%202026-08-30%20at%2016.16.49%20(1).mp4)
 
 Link del video en You Tube: 
-![Enlace](https://youtube.com/shorts/5yb6FERX9uY)
+[Ver video en YouTube](https://youtube.com/shorts/5yb6FERX9uY)
+
+
