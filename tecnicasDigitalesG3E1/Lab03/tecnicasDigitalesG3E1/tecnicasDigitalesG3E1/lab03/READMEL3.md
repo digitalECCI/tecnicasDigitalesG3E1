@@ -47,5 +47,63 @@ En las siguientes figuras se muestra cómo se distribuyen los 7 segmentos en el 
 
 ## SIMULACIONES: 
 
+A continuacion se muestran los codigos implementados y su respectiva sintetizacion en Verilog el cual nos muestra la simulacion del conteo de 0 a 7 y luego la suma implementada a traves de nuestro sumador de 4 Bits.
 
+### Codigo en Visual Code 7 Segmentos: 
+
+`include "sumador_bit.v"
+
+`timescale 1ns/1ps
+
+module SUMADOR4B_TB;
+
+    // Entradas del diseño (reg)
+    reg [3:0] A;
+    reg [3:0] B;
+    reg Cin;
+
+    // Salidas del diseño (wire)
+    wire [3:0] S;
+    wire Cout;
+
+    integer i,j;
+
+    // Instancia de la unidad bajo prueba (UUT)
+    sumador_bit uut (
+        .A(A),
+        .B(B),SUMADOR4B_TB.vcd
+        .Cin(Cin),
+        .S(S),
+        .Cout(Cout)
+    );
+
+    initial begin
+        // Crear el archivo de ondas para GTKWave
+        $dumpfile("");
+        $dumpvars(0, SUMADOR4B_TB);
+
+Cin=0;
+for(i=0; i<16; i=i+1) begin
+    for(j=0; j<16; j=j+1) begin
+        A = i; // Asignar valor a A
+        B = j; // Asignar valor a B
+        
+        #10; // Esperar 10 unidades de tiempo
+    end
+end
+        $display("Simulación terminada correctamente.");
+        $finish;
+    end
+
+endmodule
+
+### Sintetizado en Verilog: 
+![Imagen_3](./img3/WhatsApp%20Image%202026-09-18%20at%2018.19.08.jpeg)
+
+Explicacion del sintetizado en Verilog: 
+La tabla que se muestra a continuacion nos da a entender el lenguaje de salida de nuestro Display 7 Segmentos: 
+
+![Imagen_4](./img3/TABLA%20HEXA%20.png)
+
+Esto nos indica que nuestro display enciende cuando hay un 1 logico a su salida lo que nos da a entender que enciende con 1 y apaga con 0. 
 
