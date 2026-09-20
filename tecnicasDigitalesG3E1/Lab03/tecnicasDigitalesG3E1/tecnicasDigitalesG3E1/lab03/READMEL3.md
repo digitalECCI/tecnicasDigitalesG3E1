@@ -105,5 +105,12 @@ La tabla que se muestra a continuacion nos da a entender el lenguaje de salida d
 
 ![Imagen_4](./img3/TABLA%20HEXA%20.png)
 
-Esto nos indica que nuestro display enciende cuando hay un 1 logico a su salida lo que nos da a entender que enciende con 1 y apaga con 0. 
+Esto nos indica que nuestro display enciende cuando hay un 1 logico a su salida lo que nos da a entender que enciende con 1 y apaga con 0. Esto para la configuracion de Catodo Común. 
 
+Sin embargo al momento de cargar nuestro codigo a Verilog nos muestra la configuracion de Anodo Comun el cual nos dice que enciende con 0 y apaga con 1. 
+
+En la siguiente tabla se mostrara que resultado de salida para la simulacion evidenciada en la Imagen 3: 
+
+![Imagen_4](./img3/Captura%20de%20pantalla%202026-09-20%20155540.png)
+
+Aqui evidenciamos que las salidas para cada uno de los digitos o numeros coincide con las mostradas en nuestra grafica Verilog 
