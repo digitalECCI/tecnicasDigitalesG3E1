@@ -25,11 +25,11 @@ BCD significa Décimal Codificado en Binario y representa el sistema de numeraci
 
 Como sabemos hay 10 dígitos en el sistema décimal, para representarlos necesitamos 10 combinaciones de 4 bits binarios.
 
-![Imagen_1](/tecnicasDigitalesG3E1/tecnicasDigitalesG3E1/lab03/img3/Captura%20de%20pantalla%202026-09-20%20145604.png)
+![Imagen_1](./img3/Captura%20de%20pantalla%202026-09-20%20145604.png)
 
 Ahora bien, también es posible representar de forma binaria los números décimales del 10 al 15 pero empleando su correspondiente representación en el sistema hexadécimal:
 
-![Imagen_2](/tecnicasDigitalesG3E1/tecnicasDigitalesG3E1/lab03/img3/HEXA%20.png)
+![Imagen_2](./img3/HEXA%20.png)
 
 #### 2. Display 7 Segmentos: 
 El display de siete segmentos es un dispositivo electrónico que consta de siete diodos emisores de luz (LED) dispuestos en un patrón definido; encender una combinación particular de éstos permite representar un dígito décimal o hexadécimal Existen dos tipos de display LED de siete segmentos:
@@ -42,7 +42,7 @@ Tipo de ánodo común: en este tipo de display, todos los ánodos de los siete L
 
 En las siguientes figuras se muestra cómo se distribuyen los 7 segmentos en el display cuando se tiene una configuración de ánodo común:
 
-![Imagen_3](/tecnicasDigitalesG3E1/tecnicasDigitalesG3E1/lab03/img3/D7S.png)
+![Imagen_3](./img3/D7S.png)
 
 
 ## SIMULACIONES: 
