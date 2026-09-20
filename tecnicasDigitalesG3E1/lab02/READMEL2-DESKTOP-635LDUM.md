@@ -253,3 +253,14 @@ Link del video en You Tube:
 [Ver video en YouTube](https://youtube.com/shorts/5yb6FERX9uY)
 
 
+### CONCLUSIONES: 
+- El diseño demostró las ventajas del modelado estructurado en Verilog. Permitirá construir el sumador de 4 bits instanciando cuatro módulos de un bit (Full Adder) en cascada, lo que simplifica la depuración del código y refleja cómo el software de síntesis traduce descripciones textuales en bloques de hardware interconectados.
+
+- El uso de las herramientas de simulación de Quartus (como el Waveform Editor o ModelSim) permitió comprobar visualmente el comportamiento del circuito ante diferentes combinaciones de entrada. Esto demostró la importancia de la fase de verificación para asegurar que el diseño cumple con la tabla de verdad antes de realizar cualquier implementación física.
+
+- A través de la simulación temporal, se puede observar cómo los cambios en los bits más significativos (MSB) dependen de la propagación del acarreo de los bits previos. En Quartus, esto evidencia que el código Verilog genera una cadena de retrasos físicos reales (Gate Delays) que afectan el tiempo de establecimiento del resultado final.
+
+- Verilog permite diseñar el sumador tanto a nivel estructural (conectando compuertas and, or, xor) como a nivel de comportamiento (usando el operador aritmético +). Esto concluye que las herramientas modernas de síntesis de Quartus son capaces de optimizar automáticamente las ecuaciones lógicas basándose en descripciones abstractas de alto nivel.
+
+- Al compilar el proyecto en Quartus, el reporte de síntesis muestra el uso exacto de recursos (como Logic Elements o LUTs). Esto permite concluir que un sumador de 4 bits en Verilog es un circuito altamente eficiente que consume un impacto mínimo dentro de la arquitectura de un dispositivo de lógica programable (en nuestro caso se implemento en una tarjeta Max II).
+
