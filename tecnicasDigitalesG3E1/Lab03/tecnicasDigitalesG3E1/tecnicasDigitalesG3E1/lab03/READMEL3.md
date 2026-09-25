@@ -109,8 +109,16 @@ Esto nos indica que nuestro display enciende cuando hay un 1 logico a su salida 
 
 Sin embargo al momento de cargar nuestro codigo a Verilog nos muestra la configuracion de Anodo Comun el cual nos dice que enciende con 0 y apaga con 1. 
 
-En la siguiente tabla se mostrara que resultado de salida para la simulacion evidenciada en la Imagen 3: 
+En la siguiente tabla se mostrara que resultado de salida para cada uno de los digitos en Verilog evidenciada en la Imagen 3: 
 
 ![Imagen_4](./img3/Captura%20de%20pantalla%202026-09-20%20155540.png)
 
-Aqui evidenciamos que las salidas para cada uno de los digitos o numeros coincide con las mostradas en nuestra grafica Verilog 
+Aqui evidenciamos que las salidas para cada uno de los digitos o numeros coincide con las mostradas en nuestra grafica Verilog esto con la configuracion del display 7 segmentos con Anodo Común 
+
+## EVIDENCIAS: 
+
+A continuacion veremos en un video el funcionamiento en fisico de nuestro laboratorio sumador con 7 Segmentos. 
+
+### LINK DEL VIDEO: 
+![Video_1](./img3/SUMADOR%207SEG.mp4).
+
