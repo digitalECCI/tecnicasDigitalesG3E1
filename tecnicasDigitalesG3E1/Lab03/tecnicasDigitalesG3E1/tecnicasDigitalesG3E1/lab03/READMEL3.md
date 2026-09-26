@@ -125,3 +125,13 @@ A continuacion veremos en un video el funcionamiento en fisico de nuestro labora
 
 ## CONCLUSIONES: 
 
+- Se logró comprender el funcionamiento de un contador sumador digital, identificando cómo las entradas binarias son procesadas para realizar operaciones de suma y posteriormente mostrar el resultado de manera visual.
+
+- El display de 7 segmentos permitió representar numéricamente los resultados obtenidos por el circuito, facilitando la interpretación de los valores binarios y su conversión a una representación decimal.
+
+- La implementación permitió comprobar la importancia de utilizar correctamente las señales de entrada, salida y acarreo, ya que cualquier error en estas conexiones puede generar resultados incorrectos en la suma.
+
+- Se evidenció la utilidad de los circuitos combinacionales y la lógica digital para desarrollar sistemas capaces de realizar operaciones aritméticas de manera automática, constituyendo una base importante para sistemas digitales más complejos.
+
+- Finalmente, el desarrollo y simulación del contador sumador permitió relacionar los conceptos teóricos de suma binaria, contadores, compuertas lógicas y displays de 7 segmentos con una implementación práctica, fortaleciendo la comprensión del diseño y funcionamiento de circuitos digitales.
+
