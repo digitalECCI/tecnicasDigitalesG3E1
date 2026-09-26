@@ -120,5 +120,8 @@ Aqui evidenciamos que las salidas para cada uno de los digitos o numeros coincid
 A continuacion veremos en un video el funcionamiento en fisico de nuestro laboratorio sumador con 7 Segmentos. 
 
 ### LINK DEL VIDEO: 
-![Video_1](./img3/SUMADOR%207SEG.mp4).
+![Video](https://youtu.be/YcyHTxR6iCk)
+
+
+## CONCLUSIONES: 
 
