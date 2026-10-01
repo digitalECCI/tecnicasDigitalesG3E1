@@ -41,5 +41,38 @@ Tipo JK – Generalización del SR que elimina el estado prohibido.
 
 ![Imagen_2](./img4/FLIP%20FLOP.png)
 
+Este es un tipo de Flip Flop con Set y Reset y un Reloj o contador de pulsos. 
+
+##### Registros
+Un registro es un conjunto de flip-flops que opera de forma coordinada para almacenar múltiples bits de información. Los registros de desplazamiento, en particular, permiten mover datos entre flip-flops adyacentes con cada pulso de reloj, siendo una operación fundamental en muchos sistemas digitales.
+
+##### Contadores
+Los contadores son circuitos construidos a partir de flip-flops encadenados, diseñados para llevar la cuenta de pulsos de reloj. Según su configuración, pueden contar en secuencia binaria, BCD, Gray u otras codificaciones.
+
+
+### SIMULACIONES: 
+
+A continuacion se mostraran los resultados de la sintetizacion en Verilog de las siguientes simulaciones: 
+- Divisor de Frecuencia 
+- Cronometro (Archivo Test Bench)
+- Contador de 4 Bits 
+- Decodificador Multiplexor
+
+
+#### DIVISOR DE FRECUENCIA: 
+
+![Imagen_3](./img4/DIVISOR%20DE%20FRECUENCIA.jpeg)
+
+En esta imagen observamos el espectro de Frecuencia programado en 1KHz la señal de Reset y el Reloj el cual esta programado en 1KHz
+
+
+#### CRONOMETRO: 
+![Imagen_4](./img4/CRONOMETRO.jpeg)
+
+En esta imagen se muestra la entrada del multiplexor con sus cuatro entradas D0, D1, D2 y D3 representando la maxima cantidad de bits para este 
+
+
+
+
 
 
