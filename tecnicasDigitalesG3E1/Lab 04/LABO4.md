@@ -283,6 +283,17 @@ endmodule
 
 A continuacion se encontrara el video explicativo de la implementacion en fisico del cronometro multiplexado.
 
+![Video_You_Tube](https://youtu.be/OD0RrbT2hiY)
+
+
+### CONCLUSIONES: 
+1. Optimización drástica de pines de control: La multiplexación permite controlar múltiples displays de 7 segmentos utilizando un solo bus de datos común (7 u 8 pines para los segmentos) y un pin de activación por cada dígito. Esto reduce significativamente los pines necesarios en el microcontrolador o FPGA en comparación con el control estático individual.
+2. Engaño visual mediante persistencia retiniana: El sistema aprovecha el fenómeno de la persistencia de la visión humana (POV). Al encender y apagar cada dígito secuencialmente a una frecuencia alta (generalmente superior a 50 Hz), el ojo humano no percibe el parpadeo y ve todos los números encendidos al mismo tiempo.
+3. Reducción del consumo de energía y costos: Al estar encendido solo un display a la vez en un instante dado, el consumo de corriente pico disminuye considerablemente en comparación con tener todos los segmentos encendidos en paralelo. Además, reduce la cantidad de resistencias y drivers necesarios, abaratando el circuito.
+4. Importancia del temporizador (Timer) y la precisión: Para un cronómetro, la precisión del tiempo es crítica. El uso de interrupciones por temporizador (Timers) es fundamental para garantizar que el incremento del tiempo (centésimas, segundos, minutos) sea exacto y que la conmutación entre los displays sea fluida y constante, sin afectar el conteo.
+5. Complejidad del código frente a simplicidad de hardware: Este diseño demuestra un intercambio clásico en ingeniería: se reduce la complejidad del hardware a cambio de mayor complejidad en el software. El programa debe gestionar constantemente el refresco de las pantallas y la conversión de los datos binarios del cronómetro a código de 7 segmentos (BCD a 7 segmentos) en tiempo real.
+
+
 
 
 
