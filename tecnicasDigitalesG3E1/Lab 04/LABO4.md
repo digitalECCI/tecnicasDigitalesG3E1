@@ -69,7 +69,23 @@ En esta imagen observamos el espectro de Frecuencia programado en 1KHz la señal
 #### CRONOMETRO: 
 ![Imagen_4](./img4/CRONOMETRO.jpeg)
 
-En esta imagen se muestra la entrada del multiplexor con sus cuatro entradas D0, D1, D2 y D3 representando la maxima cantidad de bits para este 
+En esta imagen se muestra la entrada del multiplexor con sus cuatro entradas D0, D1, D2 y D3 representando la maxima cantidad de bits para este cronometro representado en cada Display 7 Segmentos. 
+
+
+#### CONTADOR DE 4 BITS: 
+![Imagen_5](./IMG_L4/CONTADOR%204%20BITS.jpeg)
+
+En esta imagen se muestra el diagrama sintetizado en Verilog, en el cual se observa el conteo de cada digito [0:3] en cada uno de los Display 7 Segmentos y en el cual tambien se incluye el selector y el boton o el reset incluido para el reloj de 50MHz. 
+
+
+#### DECODIFICADOR MULTIPLEXOR: 
+![Imagen_6](./IMG_L4/DECODIFICADOR%20MXO.jpeg)
+
+En esta imagen se muestra la sintetizacion de todas las partes conjuntas en el multiplexor indicado en la imagen anterior, en ella se observa el comportamiento de cada digito en cada display 7 segmentos. Adicionalmente se incluye tambien el selector y el reset para que reinicie el conteo una vez se llega al desborde de la señal del flanco de subida del reloj 50MHz. 
+
+
+### EVIDENCIAS: 
+
 
 
 
