@@ -283,8 +283,7 @@ endmodule
 
 A continuacion se encontrara el video explicativo de la implementacion en fisico del cronometro multiplexado.
 
-![Mira mi video en YouTube](https://www.youtube.com/watch?v=OD0RrbT2hiY)
-
+[Ver video en YouTube]([https://www.youtube.com/watch?v=OD0RrbT2hiY])
 
 ### CONCLUSIONES: 
 1. Optimización drástica de pines de control: La multiplexación permite controlar múltiples displays de 7 segmentos utilizando un solo bus de datos común (7 u 8 pines para los segmentos) y un pin de activación por cada dígito. Esto reduce significativamente los pines necesarios en el microcontrolador o FPGA en comparación con el control estático individual.
