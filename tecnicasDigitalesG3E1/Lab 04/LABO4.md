@@ -1,4 +1,4 @@
-# LABORATORIO 03: IMPLEMENTACION DEL 7 SEGMENTOS 
+# LABORATORIO 04: CRONOMETRO MULTIPLEXADO  
 
 ## Integrantes
 * [Wilmer Fernando Puentes Gomez](https://github.com/wilmerfepuentesgo-alt)
