@@ -283,7 +283,7 @@ endmodule
 
 A continuacion se encontrara el video explicativo de la implementacion en fisico del cronometro multiplexado.
 
-![Video_You_Tube](https://youtu.be/OD0RrbT2hiY)
+![Mira mi video en YouTube](https://www.youtube.com/watch?v=OD0RrbT2hiY)
 
 
 ### CONCLUSIONES: 
