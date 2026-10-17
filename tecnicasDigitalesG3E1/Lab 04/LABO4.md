@@ -26,7 +26,7 @@ Implementar un cronómetro digital capaz de contar segundos, décimas, centésim
 
 La lógica secuencial es una rama de la electrónica digital que estudia sistemas cuyo comportamiento depende no solo de las entradas actuales, sino también del historial de estados anteriores. A diferencia de la lógica combinacional —donde la salida es función exclusiva de las entradas presentes— en los sistemas secuenciales la salida evoluciona según la secuencia de eventos pasados, lo que les permite recordar información.
 
-![Imagen_1](./img4/Diagrama%20Bloques.png)
+![Imagen_1](./IMG_L4/Diagrama%20Bloques.png)
 
 ### COMPONENTES Y PRINCIPIOS FUNDAMENTALES:
 
@@ -39,7 +39,7 @@ Tipo T – Conmuta su estado cada vez que la entrada está activa.
 Tipo SR – Permite Set y Reset independientes de su salida.
 Tipo JK – Generalización del SR que elimina el estado prohibido.
 
-![Imagen_2](./img4/FLIP%20FLOP.png)
+![Imagen_2](./IMG_L4/FLIP%20FLOP.png)
 
 Este es un tipo de Flip Flop con Set y Reset y un Reloj o contador de pulsos. 
 
@@ -61,13 +61,13 @@ A continuacion se mostraran los resultados de la sintetizacion en Verilog de las
 
 #### DIVISOR DE FRECUENCIA: 
 
-![Imagen_3](./img4/DIVISOR%20DE%20FRECUENCIA.jpeg)
+![Imagen_3](./IMG_L4/DIVISOR%20DE%20FRECUENCIA.jpeg)
 
 En esta imagen observamos el espectro de Frecuencia programado en 1KHz la señal de Reset y el Reloj el cual esta programado en 1KHz
 
 
 #### CRONOMETRO: 
-![Imagen_4](./img4/CRONOMETRO.jpeg)
+![Imagen_4](./IMG_L4/CRONOMETRO.jpeg)
 
 En esta imagen se muestra la entrada del multiplexor con sus cuatro entradas D0, D1, D2 y D3 representando la maxima cantidad de bits para este cronometro representado en cada Display 7 Segmentos. 
 
