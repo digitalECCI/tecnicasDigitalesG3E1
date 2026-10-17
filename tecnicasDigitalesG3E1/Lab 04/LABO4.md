@@ -30,7 +30,7 @@ La lógica secuencial es una rama de la electrónica digital que estudia sistema
 
 ### COMPONENTES Y PRINCIPIOS FUNDAMENTALES:
 
-##### Flip-Flops: 
+##### Flip-Flops:
 
 Los flip-flops son los elementos de memoria básicos de la lógica secuencial. Cada uno almacena un bit de información y mantiene su estado hasta recibir una señal de activación proveniente del reloj del sistema. Los tipos más utilizados son:
 
