@@ -397,4 +397,3 @@ Si en cambio el contador debe alcanzar un valor determinado en 10 s —por ejemp
 En ese caso, un reloj de 100 kHz produce 1,000,000 pulsos en 10 s, valor que sí cabe en 20 bits porque 
 1000000 < 1048576 1000000<1048576. La redacción “frecuencia mínima” probablemente se refiere a la frecuencia necesaria para completar la cuenta de 10 s dentro del rango disponible; el límite real de no desbordamiento es:
 𝑓 𝑐𝑙𝑘 ≤ 104.86kHz.
-𝑓 clk ≤ 104.86 kHz.
