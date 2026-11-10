@@ -277,9 +277,13 @@ A continuacion se encontrara el video explicativo de la implementacion en fisico
 
 ### CONCLUSIONES: 
 • Salidas totalmente estables: En una FSM Moore, las luces del semáforo dependen únicamente del estado actual y no de las entradas del sistema, lo que garantiza que las combinaciones de colores sean completamente estables y libres de transiciones transitorias no deseadas (glitches).
+
 • Sincronización robusta: Debido a que el cambio de luces está estrictamente ligado al cambio de estado (el cual ocurre en el flanco de reloj), el semáforo es altamente inmune al ruido en los sensores externos (como botones peatonales), ya que cualquier cambio en la entrada esperará al siguiente ciclo para procesarse.
+
 • Mayor facilidad de diseño visual: El modelado de la FSM Moore resulta más intuitivo para sistemas de tráfico, ya que cada estado del diagrama representa de forma directa una combinación de luces física (por ejemplo, Estado 1 = Luz Roja, Estado 2 = Luz Verde).
+
 • Predecible frente a emergencias: Al no depender de las entradas para generar la salida, si se activa una señal de prioridad (como el paso de una ambulancia), el sistema primero cambiará de manera ordenada al estado de emergencia antes de modificar las luces, evitando cambios abruptos y peligrosos.
+
 • Ligero incremento en el número de estados: Como limitación inherente, un semáforo Moore puede requerir más estados intermedios que uno de tipo Mealy para manejar ciertas condiciones temporales o de sensores, aunque esto se compensa con la seguridad y orden que ofrece en el control de tráfico.
 
 ### PREGUNTAS A RESPONDER: 
@@ -288,10 +292,12 @@ A continuacion se encontrara el video explicativo de la implementacion en fisico
 
 2. Con 3 estados, la codificación binaria mínima requiere:
  ![Imagen_5](./IMG_05/FLIP%20FSM.png)
+
 Por tanto, se necesitan 2 flip-flops para el registro de estado: por ejemplo, ROJO=00, AMARILLO=01, VERDE=10. Una FSM binaria utiliza exactamente el número mínimo de flip-flops necesario para identificar cada estado.
 
 3. Estado de amarillo intermitente a 1 Hz
 Se agregaría un cuarto estado, por ejemplo AMARILLO_INTERMITENTE, que alterna la lámpara amarilla entre encendida y apagada a 1 Hz. El diagrama pasaría de 3 a 4 estados:
+
 ![Imagen_6](./IMG_05/AMA%20INT.png)
 
 En AMARILLO_INTERMITENTE, la salida amarilla se controlaría con un contador o con el bit menos significativo de un contador dividido a 1 Hz:
