@@ -1,4 +1,4 @@
-# LABORATORIO 04: SEMAFORO CRONOMETRADO PEATONAL Y VEHICULAR 
+# LABORATORIO 05: SEMAFORO CRONOMETRADO PEATONAL Y VEHICULAR 
 
 ## Integrantes
 * [Wilmer Fernando Puentes Gomez](https://github.com/wilmerfepuentesgo-alt)
