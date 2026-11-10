@@ -208,18 +208,72 @@ end
 endmodule
 
 ##### ARCHIVO.TB: 
+`timescale 1ns / 1ps // Definimos la escala de tiempo de la simulación
+module tb_semaforo();
 
+    // 1. REGISTROS (Para simular las entradas del semáforo)
+    reg clk;
+    reg rst;
+    reg [1:0] sw;
+
+    // 2. CABLES (Para observar las respuestas y luces del semáforo)
+    wire RV, AV, VV;
+    wire RP, VP;
+    wire alarma;
+
+    // 3. INSTANCIACIÓN (Conectamos nuestro semáforo bajo prueba)
+    semaforo uut (
+        .clk(clk),
+        .rst(rst),
+        .sw(sw),
+        .RV(RV),
+        .AV(AV),
+        .VV(VV),
+        .RP(RP),
+        .VP(VP),
+        .alarma(alarma)
+    );
+
+    // 4. GENERACIÓN DEL RELOJ SIMULADO
+    // Cambia de estado cada 10ns, simulando un reloj rápido
+    always begin
+        #10 clk = ~clk;
+    end
+
+    // 5. SECUENCIA DE PRUEBA (ESTÍMULOS)
+    initial begin
+    
+        $dumpfile("semaforo_sim.vcd"); // Crea el archivo de ondas
+        $dumpvars(0, tb_semaforo);     // Guarda todas las variables del módulo
+        
+
+        // Inicializamos los valores en el tiempo cero
+        clk = 0;
+        rst = 1; // Empezamos con el Reset presionado para limpiar el circuito
+        sw = 2'b00;
+
+        #40; // Esperamos 40ns con el circuito reiniciado
+        rst = 0; // Soltamos el Reset para que el semáforo empiece a funcionar
+
+        // Dejamos correr la simulación por suficiente tiempo 
+        // para ver todo el ciclo: ROJO -> AMARILLO -> VERDE -> AMARILLO -> ROJO
+        #2000000; 
+
+        $finish; // Terminamos la simulación
+    end
+
+endmodule
 
 
 ### EVIDENCIAS: 
-
-
+A continuación se muestra la maquina de estado generada a traves de la implementacion en el software Quartus 
+![Imagen_4](./IMG_05/MAQUINA%20DE%20ESTADO%20.jpeg)
 
 #### VIDEO DE IMPLEMENTACION FISICA: 
 
-A continuacion se encontrara el video explicativo de la implementacion en fisico del cronometro multiplexado.
+A continuacion se encontrara el video explicativo de la implementacion en fisico del semaforo implementado.
 
-[Ver video en YouTube](https://www.youtube.com/watch?v=OD0RrbT2hiY)
+[Ver video en YouTube]()
 
 ### CONCLUSIONES: 
 1. Optimización drástica de pines de control: La multiplexación permite controlar múltiples displays de 7 segmentos utilizando un solo bus de datos común (7 u 8 pines para los segmentos) y un pin de activación por cada dígito. Esto reduce significativamente los pines necesarios en el microcontrolador o FPGA en comparación con el control estático individual.
