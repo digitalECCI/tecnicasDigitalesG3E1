@@ -273,11 +273,133 @@ A continuación se muestra la maquina de estado generada a traves de la implemen
 
 A continuacion se encontrara el video explicativo de la implementacion en fisico del semaforo implementado.
 
-[Ver video en YouTube]()
+[Ver video en YouTube](https://youtube.com/shorts/JBvt_-BwdwY?si=5hRoGTocbvOZq-Df)
 
 ### CONCLUSIONES: 
-1. Optimización drástica de pines de control: La multiplexación permite controlar múltiples displays de 7 segmentos utilizando un solo bus de datos común (7 u 8 pines para los segmentos) y un pin de activación por cada dígito. Esto reduce significativamente los pines necesarios en el microcontrolador o FPGA en comparación con el control estático individual.
-2. Engaño visual mediante persistencia retiniana: El sistema aprovecha el fenómeno de la persistencia de la visión humana (POV). Al encender y apagar cada dígito secuencialmente a una frecuencia alta (generalmente superior a 50 Hz), el ojo humano no percibe el parpadeo y ve todos los números encendidos al mismo tiempo.
-3. Reducción del consumo de energía y costos: Al estar encendido solo un display a la vez en un instante dado, el consumo de corriente pico disminuye considerablemente en comparación con tener todos los segmentos encendidos en paralelo. Además, reduce la cantidad de resistencias y drivers necesarios, abaratando el circuito.
-4. Importancia del temporizador (Timer) y la precisión: Para un cronómetro, la precisión del tiempo es crítica. El uso de interrupciones por temporizador (Timers) es fundamental para garantizar que el incremento del tiempo (centésimas, segundos, minutos) sea exacto y que la conmutación entre los displays sea fluida y constante, sin afectar el conteo.
-5. Complejidad del código frente a simplicidad de hardware: Este diseño demuestra un intercambio clásico en ingeniería: se reduce la complejidad del hardware a cambio de mayor complejidad en el software. El programa debe gestionar constantemente el refresco de las pantallas y la conversión de los datos binarios del cronómetro a código de 7 segmentos (BCD a 7 segmentos) en tiempo real.
+• Salidas totalmente estables: En una FSM Moore, las luces del semáforo dependen únicamente del estado actual y no de las entradas del sistema, lo que garantiza que las combinaciones de colores sean completamente estables y libres de transiciones transitorias no deseadas (glitches).
+• Sincronización robusta: Debido a que el cambio de luces está estrictamente ligado al cambio de estado (el cual ocurre en el flanco de reloj), el semáforo es altamente inmune al ruido en los sensores externos (como botones peatonales), ya que cualquier cambio en la entrada esperará al siguiente ciclo para procesarse.
+• Mayor facilidad de diseño visual: El modelado de la FSM Moore resulta más intuitivo para sistemas de tráfico, ya que cada estado del diagrama representa de forma directa una combinación de luces física (por ejemplo, Estado 1 = Luz Roja, Estado 2 = Luz Verde).
+• Predecible frente a emergencias: Al no depender de las entradas para generar la salida, si se activa una señal de prioridad (como el paso de una ambulancia), el sistema primero cambiará de manera ordenada al estado de emergencia antes de modificar las luces, evitando cambios abruptos y peligrosos.
+• Ligero incremento en el número de estados: Como limitación inherente, un semáforo Moore puede requerir más estados intermedios que uno de tipo Mealy para manejar ciertas condiciones temporales o de sensores, aunque esto se compensa con la seguridad y orden que ofrece en el control de tráfico.
+
+### PREGUNTAS A RESPONDER: 
+
+1. Se usa Moore porque las salidas del semáforo —rojo, amarillo y verde— dependen únicamente del estado actual (ROJO, AMARILLO, VERDE), no de una entrada externa. Así, cada luz permanece estable durante todo el ciclo de reloj asociado a su estado y no puede cambiar accidentalmente a mitad del período por una variación de entrada. 
+
+2. Con 3 estados, la codificación binaria mínima requiere:
+ ![Imagen_5](./IMG_05/FLIP%20FSM.png)
+Por tanto, se necesitan 2 flip-flops para el registro de estado: por ejemplo, ROJO=00, AMARILLO=01, VERDE=10. Una FSM binaria utiliza exactamente el número mínimo de flip-flops necesario para identificar cada estado.
+
+3. Estado de amarillo intermitente a 1 Hz
+Se agregaría un cuarto estado, por ejemplo AMARILLO_INTERMITENTE, que alterna la lámpara amarilla entre encendida y apagada a 1 Hz. El diagrama pasaría de 3 a 4 estados:
+![Imagen_6](./IMG_05/AMA%20INT.png)
+
+En AMARILLO_INTERMITENTE, la salida amarilla se controlaría con un contador o con el bit menos significativo de un contador dividido a 1 Hz:
+
+VERILOG: 
+localparam ROJO = 2'd0,
+           VERDE = 2'd1,
+           AMARILLO = 2'd2,
+           AMARILLO_INTERMITENTE = 2'd3;
+
+always @(posedge clk or posedge rst) begin
+    if (rst)
+        estado <= ROJO;
+    else
+        estado <= siguiente_estado;
+end
+
+always @* begin
+    case (estado)
+        ROJO: begin
+            luz_roja = 1'b1;
+            luz_amarilla = 1'b0;
+            luz_verde = 1'b0;
+        end
+        VERDE: begin
+            luz_roja = 1'b0;
+            luz_amarilla = 1'b0;
+            luz_verde = 1'b1;
+        end
+        AMARILLO: begin
+            luz_roja = 1'b0;
+            luz_amarilla = 1'b1;
+            luz_verde = 1'b0;
+        end
+        AMARILLO_INTERMITENTE: begin
+            luz_roja = 1'b0;
+            luz_verde = 1'b0;
+            luz_amarilla = blink_1Hz; // alterna 0/1 cada 0.5 s
+        end
+        default: begin
+            luz_roja = 1'b1;
+            luz_amarilla = 1'b0;
+            luz_verde = 1'b0;
+        end
+    endcase
+end
+
+Para obtener 1 Hz, el parpadeo debe cambiar cada 0.5 s: amarillo encendido 0.5 s, apagado 0.5 s. Si el reloj base fuera de 1 Hz, bastaría alternar con blink_1Hz <= ~blink_1Hz cada flanco; si fuera más rápido, se necesita un divisor de frecuencia o un contador de medio segundo.
+
+Con 4 estados, la codificación binaria requeriría 2 flip-flops —porque 
+2^2=4
+2^2=4 — y one-hot requeriría 4 flip-flops.
+
+4. Si se escribe la lógica de siguiente estado y el registro de estado dentro de un único always @(posedge clk), el principal problema es que las señales que deberían ser combinacionales, como siguiente_estado, quedarían actualizadas solo en el flanco de reloj. Esto puede impedir que la lógica reaccione correctamente a los cambios de entradas entre flancos y complica la separación entre lógica secuencial y combinacional.
+
+Además, si dentro de ese bloque se usan asignaciones por bloqueo (=) para señales supuestamente combinacionales, la síntesis puede inferir lógica no deseada, prioridades incorrectas o comportamientos dependientes del orden de las asignaciones. La práctica recomendada es separar:
+
+always @(posedge clk): actualiza el registro de estado y contadores con asignaciones no bloqueantes (<=).
+
+always @* o always_comb: calcula siguiente_estado y las salidas con asignaciones de bloqueo (=).
+
+En un bloque combinacional, toda salida debe recibir valor en todas las ramas; de lo contrario, la herramienta de síntesis puede inferir un latch no intencional.
+
+Un ejemplo correcto sería:
+
+// Registro de estado
+always @(posedge clk or posedge rst) begin
+    if (rst)
+        estado <= ROJO;
+    else
+        estado <= siguiente_estado;
+end
+
+// Lógica de transición y salidas
+always @* begin
+    siguiente_estado = estado;
+    case (estado)
+        ROJO: if (fin_10s) siguiente_estado = VERDE;
+        VERDE: if (fin_10s) siguiente_estado = AMARILLO;
+        AMARILLO: if (fin_3s) siguiente_estado = ROJO;
+        default: siguiente_estado = ROJO;
+    endcase
+end
+
+5. Un registro de 20 bits puede representar valores desde 0 hasta:
+![Imagen_7](./IMG_05/p5.png)
+
+Si el contador incrementa una vez por ciclo de reloj y debe medir 10 s sin desbordar, la frecuencia de reloj debe cumplir:
+![Imagen_8](./IMG_05/FP5.png)
+
+Por tanto, la frecuencia máxima compatible es aproximadamente 104.86 kHz. Si la consigna pide la frecuencia que aprovecha exactamente el rango de 20 bits durante 10 s, el valor es 104.86 kHz; con una frecuencia mayor, el contador llegaría a más de 
+2^20 pulsos en 10 s y desbordaría.
+
+Si en cambio el contador debe alcanzar un valor determinado en 10 s —por ejemplo, contar hasta 999,999— la frecuencia necesaria sería:
+![Imagen_9](./IMG_05/FREQ.png)
+
+En ese caso, un reloj de 100 kHz produce 1,000,000 pulsos en 10 s, valor que sí cabe en 20 bits porque 
+1
+ 
+000
+ 
+000
+<
+1
+ 
+048
+ 
+576
+1000000<1048576. La redacción “frecuencia mínima” probablemente se refiere a la frecuencia necesaria para completar la cuenta de 10 s dentro del rango disponible; el límite real de no desbordamiento es:
+𝑓 𝑐𝑙𝑘 ≤ 104.86kHz.
+𝑓 clk ≤ 104.86 kHz.
